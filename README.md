@@ -28,6 +28,26 @@ titanic-survival-prediction-model/
 └── data/                # train.csv / test.csv go here (not committed)
 ```
 
+```mermaid
+flowchart TD
+
+A[Load Dataset]
+
+A --> B1[Train Data]
+A --> B2[Test Data]
+
+B1 --> C[Preprocessing]
+B2 --> C
+
+C --> D[Feature Engineering]
+
+D --> E[Random Forest Training]
+
+E --> F[Predict Test Labels]
+
+F --> G[Generate Submission]
+```
+
 ## Setup
 
 1. Clone the repo and install dependencies:
