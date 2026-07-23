@@ -2,9 +2,12 @@
 
 A Random Forest classifier that predicts passenger survival on the Titanic, built on the classic [Kaggle Titanic competition](https://www.kaggle.com/c/titanic) dataset.
 
+---
 ## Overview
 
 Given passenger data (age, sex, ticket class, fare, etc.), the model predicts whether a passenger survived. This project covers the core data science workflow end to end: cleaning messy data, engineering features, and training a classifier.
+
+---
 
 ## Features engineered
 
@@ -12,9 +15,13 @@ Given passenger data (age, sex, ticket class, fare, etc.), the model predicts wh
 - **FamilySize** (`SibSp + Parch + 1`) and **IsAlone** flag, capturing whether travelling with family affected survival odds.
 - **Missing value imputation**: `Age` (median per title group), `Fare` and `Embarked` (median/mode fallback).
 
+---
+
 ## Model
 
 `RandomForestClassifier` (scikit-learn), 300 trees, max depth 6, evaluated with 5-fold cross-validation before generating final predictions.
+
+---
 
 ## Project structure
 
@@ -27,6 +34,9 @@ titanic-survival-prediction-model/
 ├── .gitignore
 └── data/                # train.csv / test.csv go here (not committed)
 ```
+---
+
+## Workflow
 
 ```mermaid
 flowchart TD
@@ -47,6 +57,7 @@ E --> F[Predict Test Labels]
 
 F --> G[Generate Submission]
 ```
+---
 
 ## Setup
 
@@ -61,16 +72,13 @@ F --> G[Generate Submission]
    ```
    This prints the cross-validation accuracy and writes predictions to `submission.csv`.
 
+---
+
 ## Results
 
 5-fold cross-validation accuracy: ~0.82–0.84 (varies slightly by run due to random forest stochasticity).
 
-## Possible extensions
-
-- Try gradient boosting (XGBoost/LightGBM) for a stronger baseline.
-- Hyperparameter tuning via grid/random search.
-- Cabin deck extraction from the `Cabin` column as an additional feature.
-- Ensemble multiple models (voting/stacking).
+---
 
 ## Credits
 
